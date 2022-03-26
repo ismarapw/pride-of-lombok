@@ -1,5 +1,5 @@
 # pride-of-lombok
-Proyek Aplikasi Berbasis Platform
+Aplikasi pride of Lombok merupakan aplikasi jual beli yang berfungsi untuk melakukan transaksi pembelian souvernir/marchendise khas daerah lombok. Secara umum terdapat 2 role yaitu Admin sebagai Penjual dan User biasa sebagai Pembeli. 
 
 **UI/UX**
 
