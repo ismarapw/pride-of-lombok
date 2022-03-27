@@ -4,8 +4,17 @@ body {
     font-family: 'Poppins','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .f-18 {
     font-size: 18px;
+}
+
+.f-24 {
+    font-size: 24px;
+}
+
+.f-20 {
+    font-size: 20px;
 }
 
 .f-grey {
@@ -18,6 +27,10 @@ body {
 
 .f-black {
     color: #333333 !important;
+}
+
+.f-bold {
+    font-weight: bold;
 }
 
 .f-semi-bold {

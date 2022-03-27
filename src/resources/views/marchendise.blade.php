@@ -48,13 +48,117 @@
                         <a class="nav-link f-black f-medium" href="#">Tentang</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="btn btn-primary rounded-btn f-medium me-2" href="#">Login</a>
-                        <a class="btn btn-outline-primary rounded-btn f-medium" href="#">Daftar</a>
+                        <a class="btn btn-primary rounded-btn f-medium me-2" href="/login">Login</a>
+                        <a class="btn btn-outline-primary rounded-btn f-medium" href="/daftar">Daftar</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <section class="welcome py-5">
+        <div class="container">
+            <div class="welcoming-text">
+                <h1 class="f-24 f-black f-bold">Dapatkan Marchendise Khas Lombok.</h1>
+                <p class="f-grey">Jadikan barang-barang khas lombok sebagai oleh - oleh mu.</p>
+            </div>
+            <div class="input-group search">
+                <input type="search" class="form-control rounded" placeholder="Cari barang disini..." aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" class="btn btn-primary"><i class="ri-search-line"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="marchendises mt-5 pb-5">
+        <div class="container">
+            <div class="page-title">
+                <h2 class="f-green f-20 f-bold">Daftar Marchendise</h2>
+            </div>
+            <div class="list-items mt-4">
+                <div class="row gy-5 row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-5">
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Anyeman Ketak</h5>
+                                <p class="card-text">Kerajinan anyeman</p>
+                                <p class="card-price">Rp125.000</p>
+                            </div>
+                            <div class="action d-flex justify-content-center align-items-center">
+                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Anyeman Ketak</h5>
+                                <p class="card-text">Kerajinan anyeman</p>
+                                <p class="card-price">Rp125.000</p>
+                            </div>
+                            <div class="action d-flex justify-content-center align-items-center">
+                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Anyeman Ketak</h5>
+                                <p class="card-text">Kerajinan anyeman</p>
+                                <p class="card-price">Rp125.000</p>
+                            </div>
+                            <div class="action d-flex justify-content-center align-items-center">
+                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Anyeman Ketak</h5>
+                                <p class="card-text">Kerajinan anyeman</p>
+                                <p class="card-price">Rp125.000</p>
+                            </div>
+                            <div class="action d-flex justify-content-center align-items-center">
+                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Anyeman Ketak</h5>
+                                <p class="card-text">Kerajinan anyeman</p>
+                                <p class="card-price">Rp125.000</p>
+                            </div>
+                            <div class="action d-flex justify-content-center align-items-center">
+                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Anyeman Ketak</h5>
+                                <p class="card-text">Kerajinan anyeman</p>
+                                <p class="card-price">Rp125.000</p>
+                            </div>
+                            <div class="action d-flex justify-content-center align-items-center">
+                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
