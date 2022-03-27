@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('marchendise');
 });
 
 Route::get('/daftar', function () {
     return view('daftar');
+});
+
+Route::get('/login', function () {
+    return view('login');
 });
