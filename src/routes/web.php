@@ -24,3 +24,16 @@ Route::get('/daftar', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+
+Route::get('/pembelian', function () {
+    return view('pembelian');
+});
+
+Route::get('/pesanan', function () {
+    return view('pesanan');
+});
+
+Route::get('/admin', function () {
+    return view('admin');
+});

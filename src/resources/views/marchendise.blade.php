@@ -69,7 +69,7 @@
         </div>
     </section>
 
-    <section class="marchendises mt-5 pb-5">
+    <section class="mt-5 pb-5">
         <div class="container">
             <div class="page-title">
                 <h2 class="f-green f-20 f-bold">Daftar Marchendise</h2>

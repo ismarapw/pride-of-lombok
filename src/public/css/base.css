@@ -17,6 +17,7 @@ body {
     font-size: 20px;
 }
 
+
 .f-grey {
     color: #8E8E8E;
 }
@@ -27,6 +28,10 @@ body {
 
 .f-black {
     color: #333333 !important;
+}
+
+.f-orange {
+    color: #F85734;
 }
 
 .f-bold {

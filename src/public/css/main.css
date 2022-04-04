@@ -76,6 +76,21 @@
     transition: .15s ease-in;
 }
 
+.img-order{
+    width: 80%;
+    object-fit: contain;
+}
+
+.image-wrapper {
+    border: 1px solid #CCCCCC;
+    border-radius: 15px;
+    width: 158px;
+    height: 150px;
+}
+
+.order {
+    border-bottom: 1px solid #CCCCCC;
+}
 
 @media (max-width: 992px) {
     .nav-active::after {
