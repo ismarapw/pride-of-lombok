@@ -42,14 +42,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item me-3">
-                        <a class="nav-link nav-active f-black f-medium" href="#">Marchendise</a>
-                    </li>
-                    <li class="nav-item me-5">
-                        <a class="nav-link f-black f-medium" href="#">Tentang</a>
+                        <a class="nav-link nav-active f-black f-medium" href="/admin">Marchendise</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="btn btn-primary rounded-btn f-medium me-2" href="/login">Login</a>
-                        <a class="btn btn-outline-primary rounded-btn f-medium" href="/daftar">Daftar</a>
+                        <a class="nav-link f-black f-medium" href="/pesanan">Pesanan</a>
+                    </li>
+                    <li class="nav-item me-5">
+                        <a class="nav-link f-black f-medium" href="/profile">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -61,7 +60,7 @@
             <div class="page-title">
                 <div class="d-flex align-items-center">
                     <h2 class="mt-1 f-green f-20 f-bold">Atur Marchendise</h2>
-                    <a class="ms-4 btn btn-primary rounded-btn d-flex" href="#">
+                    <a class="ms-4 btn btn-primary rounded-btn d-flex" href="/tambah-marchendise">
                         <i class="ri-add-line" style="margin-top:-2px; font-size:20px;"></i>
                         <span style="margin-top:2px;">Tambah</span>
                     </a>

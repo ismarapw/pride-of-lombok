@@ -88,6 +88,13 @@
     height: 150px;
 }
 
+.image-wrapper-big {
+    width: 212px;
+    height: 250px;
+}
+
+
+
 .order {
     border-bottom: 1px solid #CCCCCC;
 }
