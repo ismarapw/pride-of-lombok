@@ -55,6 +55,12 @@
         </div>
     </nav>
 
+    @if(session()->has('not_permit'))
+        <div class="container alert alert-danger text-center mt-3" role="alert">
+            {{ session('not_permit')}}
+        </div>
+    @endif
+
     <section class="welcome py-5">
         <div class="container">
             <div class="welcoming-text">
@@ -75,84 +81,23 @@
             </div>
             <div class="list-items mt-4">
                 <div class="row gy-5 row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-5">
+
+                    @foreach($marchendises as $marchendise)
                     <div class="col">
                         <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
+                            <img src="{{'images/'.$marchendise->gambar}}" class="card-img-top" alt="">
                             <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
+                                <h5 class="card-title">{{ $marchendise->nama }}</h5>
+                                <p class="card-text">{{ $marchendise->jenis }}</p>
+                                <p class="card-price">Rp.{{ $marchendise->harga }}</p>
                             </div>
                             <div class="action d-flex justify-content-center align-items-center">
                                 <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
-                            </div>
-                            <div class="action d-flex justify-content-center align-items-center">
-                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
-                            </div>
-                            <div class="action d-flex justify-content-center align-items-center">
-                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
-                            </div>
-                            <div class="action d-flex justify-content-center align-items-center">
-                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
-                            </div>
-                            <div class="action d-flex justify-content-center align-items-center">
-                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
-                            </div>
-                            <div class="action d-flex justify-content-center align-items-center">
-                                <a href="#" class="btn btn-primary rounded-btn">Lihat</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                
                 </div>
             </div>
 

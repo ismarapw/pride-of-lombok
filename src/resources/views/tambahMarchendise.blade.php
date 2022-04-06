@@ -45,30 +45,37 @@
 
   <div class="container mt-5">
     <h2 class="f-green f-20 f-bold">Tambah Marchendise</h2>
-      <form action="" method="POST" class="mt-4 w-75">
+      <form action="/tambah-marchendise" method="POST" class="mt-4 w-75" enctype="multipart/form-data">
+          @csrf
           <div class="mb-3">
             <label for="nama" class="form-label">Nama Barang</label>
-            <input type="text" name="nama"  class="form-control" id="nama" placeholder="Masukkan nama barang barang">
+            <input type="text" name="nama"  class="form-control @error('nama') is-invalid @enderror" id="nama" placeholder="Masukkan nama barang barang" value="{{ old('nama') }}">
+            <div class="invalid-feedback"> @error('nama') {{ $message }} @enderror</div>
           </div>
           <div class="mb-3">
             <label for="jenis" class="form-label">Janis Barang</label>
-            <input type="text" name="jenis"  class="form-control" id="jenis" placeholder="Masukkan jenis barang">
+            <input type="text" name="jenis"  class="form-control @error('jenis') is-invalid @enderror" id="jenis" placeholder="Masukkan jenis barang" value="{{ old('jenis') }}">
+            <div class="invalid-feedback"> @error('jenis') {{ $message }} @enderror</div>
           </div>
           <div class="mb-3">
             <label for="deskripsi" class="form-label">Deskripsi Barang</label>
-            <input type="text" name="deskripsi"  class="form-control" id="deskripsi" placeholder="Masukkan deskripsi barang">
+            <input type="text" name="deskripsi"  class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" placeholder="Masukkan deskripsi barang" value="{{ old('deskripsi') }}">
+            <div class="invalid-feedback"> @error('deskripsi') {{ $message }} @enderror</div>
           </div>
           <div class="mb-3">
             <label for="harga" class="form-label">Harga Barang</label>
-            <input type="number" min="1" name="harga" class="form-control" id="harga" placeholder="Masukkan harga barang">
+            <input type="number" min="1" name="harga" class="form-control @error('harga') is-invalid @enderror" id="harga" placeholder="Masukkan harga barang" value="{{ old('harga') }}">
+            <div class="invalid-feedback"> @error('harga') {{ $message }} @enderror</div>
           </div>
           <div class="mb-3">
             <label for="formFile" class="form-label" for="gambar">Pilih Gambar</label>
-            <input class="form-control" type="file" id="gambar" name="gambar" accept="image/*">
+            <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" accept="image/*" >
+            <div class="invalid-feedback"> @error('gambar') {{ $message }} @enderror</div>
           </div>
           <div class="buttons mt-4">
             <button type="submit" class="btn btn-primary rounded-btn">Tambah</button>
-            <a href="/admin" class="btn btn-outline-primary rounded-btn">Kembali</a>
+            <a href="{{ url()->previous() }}" class="btn btn-outline-primary rounded-btn">Kembali</a>
+            <div class="invalid-feedback"> @error('') {{ $message }} @enderror</div>
           </div>
       </form>
   </div>

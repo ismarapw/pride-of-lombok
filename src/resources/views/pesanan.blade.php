@@ -58,7 +58,7 @@
     <section class="mt-5 pb-5">
         <div class="container">
             <div class="page-title">
-                <h2 class="f-green f-20 f-bold">Daftar Pesanan</h2>
+                <h2 class="f-green f-20 f-bold">Daftar Pesanan Masuk</h2>
             </div>
             <div class="list-order mt-5">
                 <div class="order mb-5">

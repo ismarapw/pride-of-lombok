@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MarchendiseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,52 +17,50 @@ use App\Http\Controllers\LoginController;
 */
 
 
-// Route Login dan Register
-Route::get('/daftar', [RegisterController::class, 'index']);
+
+Route::get('/daftar', [RegisterController::class, 'index'])->middleware('guest');
 
 Route::post('/daftar', [RegisterController::class, 'store']);
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 
+Route::post('/login', [LoginController::class, 'auth']);
 
+Route::post('/logout', [LoginController::class, 'logout']);  
 
-
-// Route Pembeli
-Route::get('/', function () {
-    return view('marchendise');
-});
-
+Route::get('/', [MarchendiseController::class, 'index'])->middleware('auth');
 
 Route::get('/detail', function () {
     return view('detail');
-});
+})->middleware('auth');
 
 Route::get('/beli', function () {
     return view('beliLangsung');
-});
+})->middleware('auth');
 
 Route::get('/pembelian', function () {
     return view('pembelian');
-});
+})->middleware('auth');
 
 
-// Route Penjual/Admin
+Route::get('/admin', [MarchendiseController::class, 'admin'])->middleware('auth','admin');
+
 Route::get('/pesanan', function () {
     return view('pesanan');
-});
+})->middleware('auth','admin');
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+Route::get('/tambah-marchendise', [MarchendiseController::class, 'viewTambah'])->middleware('auth','admin');
 
-Route::get('/tambah-marchendise', function () {
-    return view('tambahMarchendise');
-});
+Route::post('/tambah-marchendise', [MarchendiseController::class, 'store']);
 
-Route::get('/ubah-marchendise', function () {
-    return view('ubahMarchendise');
-});
+Route::get('/ubah-marchendise/{id}',   [MarchendiseController::class, 'viewEdit'])->middleware('auth','admin');
+
+Route::put('/ubah-marchendise/{id}',   [MarchendiseController::class, 'edit']);
+
+Route::get('/hapus-marchendise/{id}',   [MarchendiseController::class, 'viewHapus'])->middleware('auth','admin');
+
+Route::delete('/hapus-marchendise/{id}',   [MarchendiseController::class, 'destroy']);
 
 Route::get('/profile', function () {
     return view('ubahProfile');
-});
+})->middleware('auth');

@@ -55,6 +55,24 @@
         </div>
     </nav>
 
+    @if(session()->has('tambah-success'))
+        <div class="container alert alert-success text-center mt-3" role="alert">
+            {{ session('tambah-success')}}
+        </div>
+    @endif
+
+    @if(session()->has('edit-success'))
+        <div class="container alert alert-success text-center mt-3" role="alert">
+            {{ session('edit-success')}}
+        </div>
+    @endif
+
+    @if(session()->has('hapus-success'))
+        <div class="container alert alert-success text-center mt-3" role="alert">
+            {{ session('hapus-success')}}
+        </div>
+    @endif
+
     <section class="mt-5 pb-5">
         <div class="container">
             <div class="page-title">
@@ -68,62 +86,22 @@
             </div>
             <div class="list-items mt-5">
                 <div class="row gy-5 row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-5">
+                    @foreach($marchendises as $marchendise)
                     <div class="col">
                         <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
+                            <img src="{{'/images/'.$marchendise->gambar}} " class="card-img-top" alt="">
                             <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
+                                <h5 class="card-title">{{ $marchendise->nama }}</h5>
+                                <p class="card-text">{{ $marchendise->jenis }}</p>
+                                <p class="card-price">Rp.{{ $marchendise->harga }}</p>
                             </div>
                             <div class="action d-flex flex-column justify-content-center align-items-center">
-                                <a href="#" class="btn btn-primary rounded-btn" style="width: 120px;">Ubah</a>
-                                <a href="#" class="btn btn-danger rounded-btn mt-2" style="width: 120px;">Hapus</a>
+                                <a href="{{'ubah-marchendise/'.$marchendise->id}} " class="btn btn-primary rounded-btn" style="width: 120px;">Ubah</a>
+                                <a href="{{'hapus-marchendise/'.$marchendise->id}} " class="btn btn-danger rounded-btn mt-2" style="width: 120px;">Hapus</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
-                            </div>
-                            <div class="action d-flex flex-column justify-content-center align-items-center">
-                                <a href="#" class="btn btn-primary rounded-btn" style="width: 120px;">Ubah</a>
-                                <a href="#" class="btn btn-danger rounded-btn mt-2" style="width: 120px;">Hapus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
-                            </div>
-                            <div class="action d-flex flex-column justify-content-center align-items-center">
-                                <a href="#" class="btn btn-primary rounded-btn" style="width: 120px;">Ubah</a>
-                                <a href="#" class="btn btn-danger rounded-btn mt-2" style="width: 120px;">Hapus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img src="/images/sv_1.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Anyeman Ketak</h5>
-                                <p class="card-text">Kerajinan anyeman</p>
-                                <p class="card-price">Rp125.000</p>
-                            </div>
-                            <div class="action d-flex flex-column justify-content-center align-items-center">
-                                <a href="#" class="btn btn-primary rounded-btn" style="width: 120px;">Ubah</a>
-                                <a href="#" class="btn btn-danger rounded-btn mt-2" style="width: 120px;">Hapus</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                    
                 </div>
             </div>

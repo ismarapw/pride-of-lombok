@@ -59,10 +59,32 @@
             </div>
             <div class="buttons mt-4">
               <button type="submit" class="btn btn-primary rounded-btn">Edit</button>
-              <a href="/" class="btn btn-outline-primary rounded-btn">Kembali</a>
-              <a href="/logout" class="btn btn-danger rounded-btn">Logout</a>
+              <a href="{{ url()->previous() }}" class="btn btn-outline-primary rounded-btn">Kembali</a>
+              <button type="button" class="btn btn-danger rounded-btn" data-bs-toggle="modal" data-bs-target="#logout">Logout</button>
             </div>
           </form>
+    </div>
+
+    <!-- Modal Logout -->
+    <div class="modal fade" id="logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Peringatan Logout</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Anda yakin ingin keluar ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary rounded-btn" data-bs-dismiss="modal">Tidak</button>
+            <form action="/logout" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-danger rounded-btn">Keluar</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

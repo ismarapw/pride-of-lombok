@@ -26,6 +26,7 @@
 
 .card {
     width: 180px;
+    height: 210px;
 }
 
 .card-title, .card-text, .card-price {
@@ -51,7 +52,13 @@
 }
 
 .card-img-top {
-    object-fit: cover;
+    object-fit: contain;
+    height: 90px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body{
+    border-top: 1px solid #CCCCCC;
 }
 
 .card {
