@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Poppins','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.f-18 {
+    font-size: 18px;
+}
+
+.f-24 {
+    font-size: 24px;
+}
+
+.f-20 {
+    font-size: 20px;
+}
+
+.f-22 {
+    font-size: 22px;
+}
+
+
+.f-grey {
+    color: #8E8E8E;
+}
+
+.f-green {
+    color: #4EBF4D;
+}
+
+.f-black {
+    color: #333333 !important;
+}
+
+.f-orange {
+    color: #F85734;
+}
+
+.f-bold {
+    font-weight: bold;
+}
+
+.f-semi-bold {
+    font-weight: 600;
+}
+
+.f-medium {
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #4EBF4D;
+    border-color: #4EBF4D;
+}
+
+.btn-primary:hover {
+    background-color: #21881f;
+    border-color: #21881f;
+    
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    border-color: #4EBF4D;
+    color:#4EBF4D;
+}
+
+.btn-outline-primary:hover {
+    background-color: transparent;
+    border-color: #21881f;
+    color: #21881f;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #21881f;
+}
+
+.rounded-btn {
+    border-radius: 24px;
+    padding: 5px 30px;
+}
