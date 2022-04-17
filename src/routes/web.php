@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MarchendiseController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\FavoritController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,37 +21,23 @@ use App\Http\Controllers\MarchendiseController;
 */
 
 
-
+// -------------------- Route Register --------------------- //
 Route::get('/daftar', [RegisterController::class, 'index'])->middleware('guest');
 
 Route::post('/daftar', [RegisterController::class, 'store']);
 
+
+// -------------------- Route Login --------------------- //
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 
 Route::post('/login', [LoginController::class, 'auth']);
 
 Route::post('/logout', [LoginController::class, 'logout']);  
 
+// ----------------- Route Marchendise------------------- //
 Route::get('/', [MarchendiseController::class, 'index'])->middleware('auth');
 
-Route::get('/detail', function () {
-    return view('detail');
-})->middleware('auth');
-
-Route::get('/beli', function () {
-    return view('beliLangsung');
-})->middleware('auth');
-
-Route::get('/pembelian', function () {
-    return view('pembelian');
-})->middleware('auth');
-
-
 Route::get('/admin', [MarchendiseController::class, 'admin'])->middleware('auth','admin');
-
-Route::get('/pesanan', function () {
-    return view('pesanan');
-})->middleware('auth','admin');
 
 Route::get('/tambah-marchendise', [MarchendiseController::class, 'viewTambah'])->middleware('auth','admin');
 
@@ -61,6 +51,35 @@ Route::get('/hapus-marchendise/{id}',   [MarchendiseController::class, 'viewHapu
 
 Route::delete('/hapus-marchendise/{id}',   [MarchendiseController::class, 'destroy']);
 
-Route::get('/profile', function () {
-    return view('ubahProfile');
-})->middleware('auth');
+Route::get('/detail-marchendise/{id}', [MarchendiseController::class, 'viewDetail'])->middleware('auth');
+
+// ----------------- Route Favorit------------------- //
+Route::get('/favorit', [FavoritController::class, 'index'])->middleware('auth');
+
+Route::post('/favorit/tambah/{id}', [FavoritController::class, 'store'])->middleware('auth');
+
+Route::delete('/favorit/hapus/{id}', [FavoritController::class, 'destroy'])->middleware('auth');
+
+
+// ------------------ Route Profile ---------------------- //
+Route::get('/profile',   [ProfileController::class, 'index'])->middleware('auth');
+
+Route::put('/profile',   [ProfileController::class, 'edit'])->middleware('auth');
+
+
+// ------------------ Route Transaksi ---------------------- //
+Route::get('/beli-marchendise/{id}', [TransaksiController::class, 'viewBeli'])->middleware('auth');
+
+Route::post('/beli-marchendise/{id}', [TransaksiController::class, 'store'])->middleware('auth');
+
+Route::get('/pembelian', [TransaksiController::class, 'viewDaftarPembelian'])->middleware('auth');
+
+Route::get('/pesanan', [TransaksiController::class, 'viewPesananUser'])->middleware('auth','admin');
+
+
+// ----------------- Route Cari (AJAX)------------------- //
+Route::get('/search', [SearchController::class, 'liveSearch'])->middleware('auth');
+
+
+
+

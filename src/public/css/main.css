@@ -3,22 +3,29 @@
     border-bottom: 1px solid #CCCCCC;
 }
 
-.nav-active::after {
-    content: "";
-    width: 100%;
-    border-bottom: 2px solid #4EBF4D;;
-    position: absolute;
-    bottom: -11px;
-    left: 2px;
-}
-
-.nav-item {
-    position: relative;
-}
 
 .input-group.search {
-    width: 285px;
+    width: 350px;
 }
+
+.nav-active {
+    color: #4EBF4D !important;
+}
+
+#hasil-cari {
+    margin-top: 10px;
+    width: 310px;
+    position: absolute;
+    background-color: #FEFEFE;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    z-index: 3;;
+}
+
+.list-finding:hover {
+    background-color: #ebebeb;
+}
+
 
 .welcome {
     border-bottom: 1px solid #CCCCCC;
