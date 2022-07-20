@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Marchendise;
 
+use Illuminate\Support\Facades\Auth;
+
 class MarchendiseController extends Controller
 {
 
@@ -13,23 +15,33 @@ class MarchendiseController extends Controller
 
     // view halaman Home (daftar marchendise)
     public function index(){
+        if(Auth::User()->is_admin){
+            return redirect("/admin");
+        }
+
         $marchendises = Marchendise::all();
 
         return view('marchendise.index', [
             'marchendises' => $marchendises,
             "title" => 'Home'
         ]);
+     
     }
 
 
     // View halaman detail suatu Marchendise
     public function viewDetail($id){
-        $marchendise = Marchendise::findOrFail($id);
+        if(Auth::User()->is_admin){
+            return redirect("/admin");
+        }
+        
+			$marchendise = Marchendise::findOrFail($id);
 
-        return view('marchendise.detailMarchendise', [
-            'marchendise' => $marchendise,
-            "title" => 'Detail'
-        ]);
+			return view('marchendise.detailMarchendise', [
+				'marchendise' => $marchendise,
+				"title" => 'Detail'
+			]);
+        
     }
 
 

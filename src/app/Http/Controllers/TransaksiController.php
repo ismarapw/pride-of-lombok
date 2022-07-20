@@ -16,12 +16,17 @@ class TransaksiController extends Controller
     
     // View halaman beli suatu Marchendise
     public function viewBeli($id){
+        if(Auth::User()->is_admin){
+            return redirect("/admin");
+        }
+
         $marchendise = Marchendise::findOrFail($id);
 
         return view('transaksi.beliMarchendise', [
             'marchendise' => $marchendise,
             "title" => 'Beli Marchendise'
         ]);
+        
     }
 
     // Fungsi membuat pesanan dari suatu marchendise
@@ -29,7 +34,7 @@ class TransaksiController extends Controller
         
         // Validasi pesanan
         $validated_data = $request->validate([
-            'jumlah' => "required",
+            'jumlah' => "required|min:1",
             "alamat" => 'required|max:512',
             "metode" => 'required|max:128'
         ]);
@@ -56,6 +61,10 @@ class TransaksiController extends Controller
 
     // view daftar barang yang dibeli
     public function viewDaftarPembelian(){
+        if(Auth::User()->is_admin){
+            return redirect("/admin");
+        }
+
         //  ambil id user
         $user_id = Auth::user()->id;
 

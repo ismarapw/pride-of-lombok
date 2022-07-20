@@ -18,7 +18,7 @@
                     <div class="action d-flex flex-column justify-content-center align-items-center">
                         <a href="detail-marchendise/{{ $marchendise->merch_id }}" class="btn btn-primary rounded-btn"  style="width: 120px;">Lihat</a>
                         <form action="/favorit/hapus/{{$marchendise->fav_id}}" method="post">
-                            @csrf
+                            @csrf	
                             @method('delete')
                             <button type="submit" class="btn btn-light rounded-btn mt-2"  style="width: 120px;">Hapus</button>
                         </form>
