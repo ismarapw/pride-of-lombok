@@ -12,7 +12,7 @@ Pride of Lombok can be called an e commerce website which sells many marchendise
 8. Create, Update, Delete Product (Admin, the default admin account is viewed in installation section)
 
 # Installation and Usage
-At the beginning, you can clone this repository. After that, make sure your machine has been installed with PHP (8.2.4), composer (2.5.8) and database (This project used XAMPP as a server). After that you can update this repository by using
+At the beginning, you can clone this repository and you have to make sure that your machine has been installed with PHP (8.2.4), composer (2.5.8) and database (This project used XAMPP as a server). After that you can update this repository by using
 ```bash
 composer update
 ```
