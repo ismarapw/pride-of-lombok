@@ -16,6 +16,12 @@ At the beginning, you can clone this repository and you have to make sure that y
 ```bash
 composer update
 ```
+Generate the env file for this project (Command bellow used in linux, in windows probably you can use .env-example file and copy it as .env file)
+
+```bash
+cp .env-example .env
+```
+
 in the project itself (.env file), you can then change the database connection based on yours. Mine used this
 ```bash
 DB_CONNECTION=mysql
