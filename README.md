@@ -36,7 +36,7 @@ You can serve the laravel by using
 php artisan serve
 ```
 
-The default admin account is in the seeder file at ./database/seeder/DatabaseSeeder.php
+The default admin account is in the seeder file at ./database/seeder/DatabaseSeeder.php. You can login by that in login menu and you can do the Create, Update and Delete products.
 ```bash
 'username' => 'admin123'
 'email' => "admin123@gamil.com"
