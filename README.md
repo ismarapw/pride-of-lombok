@@ -16,7 +16,7 @@ At the beginning, you can clone this repository and you have to make sure that y
 ```bash
 composer update
 ```
-in the project itself (.env file), you can then change the database connection based on yours. Mine use this
+in the project itself (.env file), you can then change the database connection based on yours. Mine used this
 ```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
